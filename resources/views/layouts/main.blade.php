@@ -16,10 +16,9 @@
 </head>
 
 <body>
-    <main>
-        <h1>ciao</h1>
-
-    </main>
+    <header>
+    </header>
+    @yield('main')
 </body>
 
 </html>

@@ -1,2 +1,5 @@
 @extends('layouts.main')
-@yield('main')
+
+@section('main')
+    <h1>10:10</h1>
+@endsection

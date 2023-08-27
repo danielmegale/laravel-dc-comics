@@ -1,4 +1,5 @@
 @extends('layout.main_layout')
+
 @section('main')
     <section class="container spotlight">
         <div class="pb">

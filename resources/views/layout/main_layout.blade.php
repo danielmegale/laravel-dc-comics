@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dc Comics</title>
+    @yield('bootstrap')
     @vite('resources/js/app.js')
 </head>
 
@@ -34,6 +35,7 @@
     <section id="jumbotron"></section>
     <div class="blue-bar"></div>
     @yield('main')
+    @yield('content')
     {{-- Footer --}}
     <section id="footer">
         <div>

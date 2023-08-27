@@ -18,6 +18,7 @@ $comics = config('comics');
                 @endforeach
             </figure>
         </main>
+        <a href="/comic/create" class="">Aggiungi Comic</a>
     </section>
     {{-- Jumbotron --}}
     <section id="adv">

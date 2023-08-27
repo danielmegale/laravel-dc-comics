@@ -1,0 +1,28 @@
+#header{
+    nav{
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 30px 0;
+    };
+    ul{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        li{
+            a{
+                text-decoration: none;
+                color: #000;
+                padding: 17.5px 0;
+                &:hover{
+                    color: #0282F9;
+                    border-bottom: 5px solid #0282F9;
+                };
+                &:active{
+                    background-color: #0282F9;
+                    color: #000
+                }
+            };
+        };
+    };
+}

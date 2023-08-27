@@ -1,0 +1,25 @@
+#adv{
+    div{
+        background-color:#0282F9;
+        img{
+            height: 50px;
+        }
+    figure{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.row{
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+    gap:10px;
+    color: #fff;
+}
+.height{
+    height:200px;
+}
+figure{
+    height: 100%;
+}
+}

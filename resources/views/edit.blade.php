@@ -20,40 +20,44 @@
     </div>
     <hr>
     <div class="card-body">
-        <form method="POST" action="{{ route('comic.store') }}" class="container mb-5">
+        <form method="POST" action="{{ route('comic.update', $comic) }}" class="container mb-5">
             @csrf
+            @method('PUT')
             <div class="row">
                 <div class="col-6">
                     <div class="mb-3">
                         <label for="title" class="form-label">Titolo</label>
-                        <input type="text" class="dorm-control" id="title" name="title" placeholder="Titolo">
+                        <input type="text" class="dorm-control" id="title" name="title" placeholder="Titolo"
+                            value="{{ $comic->title }}">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
                         <label for="thumb" class="form-label">Immagine</label>
-                        <input type="url" class="form-control" id="thumb" name="thumb" placeholder="URL Immagine">
+                        <input type="url" class="form-control" id="thumb" name="thumb" placeholder="URL Immagine"
+                            value="{{ $comic->thumb }}">
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="description" class="form-label">Descrizione</label>
-                        <textarea class="form-control" id="description" name="description" placeholder="Descrizione" rows="3"></textarea>
+                        <textarea class="form-control" id="description" name="description" placeholder="Descrizione" rows="3">{{ $comic->description }}</textarea>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="mb-3">
                         <label for="type" class="form-label">Tipo</label>
                         <select class="dorm-select" aria-label="Default select example" name="type" id="type">
-                            <option>comic book</option>
-                            <option>graphic novel</option>
+                            <option @if ($comic->typo === 'comic book') selected @endif>comic book</option>
+                            <option @if ($comic->typo === 'graphic novel') selected @endif>graphic novel</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="mb-3">
                         <label for="series" class="form-label">series</label>
-                        <input type="text" class="form-control" id="series" name="series" placeholder="series">
+                        <input type="text" class="form-control" id="series" name="series" placeholder="series"
+                            value="{{ $comic->series }}">
                     </div>
                 </div>
                 <div class="col-4">

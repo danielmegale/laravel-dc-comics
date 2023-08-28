@@ -30,19 +30,16 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'thumb' => 'required|string|url',
+            'type' => 'required|string',
+            'series' => 'required|string',
+
+        ]);
         $data = $request->all();
         $comic = new Comic($data);
-        // $comic->title = $data['title'];
-        // $comic->description = $data['description'];
-        // $comic->thumb = $data['thumb'];
-        // $comic->type = $data['type'];
-        // $comic->updated_at = $data['updated_at'];
-        // $comic->created_at = $data['created_at'];
-        // $comic->price = $data['price'];
-        // $comic->series = $data['series'];
-        // $comic->sale_date = $data['sale_date'];
-        // $comic->artists = $data['artists'];
-        // $comic->writers = $data['writers'];
         $comic->save();
         return to_route('home');
     }
@@ -64,17 +61,28 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Comic $comic)
     {
-        //
+        return view('edit', compact('comic'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $request->validate([
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'thumb' => 'required|string|url',
+            'type' => 'required|string',
+            'series' => 'required|string',
+
+        ]);
+        $data = $request->all();
+        $comic = new Comic($data);
+        $comic->save();
+        return to_route('comic.show', $comic);
     }
 
     /**

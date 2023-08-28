@@ -18,28 +18,24 @@
                 </div>
             </div>
             <div class="pb-50">{{ $comic['description'] }}</div>
-            <img src="{{ Vite::asset('resources\img\adv.png') }}" alt="">
+            {{-- <img src="{{ Vite::asset('resources\img\adv.png') }}" alt=""> --}}
             <div class="flex bg-grey w-800">
                 <div class="w-50">
                     <h2>Talent</h2>
                     <div class="flex">
                         <h4 class="w-20">Art by:</h4>
                         <div class="w-80">
-                            {{-- @foreach ($comic['artists'] as $artist)
-                                <span class="fs-1">
-                                    {{ $artist }},
-                                </span>
-                            @endforeach --}}
+                            <span class="fs-1">
+                                {{ $comic['artists'] }},
+                            </span>
                         </div>
                     </div>
                     <div class="flex">
                         <h4 class="w-20">Written by:</h4>
                         <div class="w-80">
-                            {{-- @foreach ($comic['writers'] as $writer)
-                                <span>
-                                    {{ $writer }},
-                                </span>
-                            @endforeach --}}
+                            <span>
+                                {{ $comic['writers'] }},
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -58,6 +54,9 @@
                         <a class="w-80" href="">{{ $comic['sale_date'] }}</a>
                     </div>
                 </div>
+            </div>
+            <div>
+                <a href="{{ route('comic.edit', $comic) }}" class="btn-back">Modifica</a>
             </div>
         </section>
     </section>

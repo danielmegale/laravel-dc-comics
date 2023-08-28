@@ -15,7 +15,8 @@
     <section id="header">
         <header class="container">
             <nav>
-                <img src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="">
+                <a href="{{ route('home') }}"><img src="{{ Vite::asset('resources/img/dc-logo.png') }}"
+                        alt=""></a>
                 <ul>
                     <li><a>Characters</a></li>
                     <li><a>Comics</a></li>

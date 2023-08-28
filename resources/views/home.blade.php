@@ -15,7 +15,7 @@
                 @endforeach
             </figure>
         </main>
-        <a href="/comic/create" class="">Aggiungi Comic</a>
+        <a href="{{ route('comic.create', $comic) }}" class="">Aggiungi Comic</a>
     </section>
     {{-- Jumbotron --}}
     <section id="adv">

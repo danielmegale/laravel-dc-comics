@@ -25,21 +25,21 @@
                     <div class="flex">
                         <h4 class="w-20">Art by:</h4>
                         <div class="w-80">
-                            @foreach ($comic['artists'] as $artist)
+                            {{-- @foreach ($comic['artists'] as $artist)
                                 <span class="fs-1">
                                     {{ $artist }},
                                 </span>
-                            @endforeach
+                            @endforeach --}}
                         </div>
                     </div>
                     <div class="flex">
                         <h4 class="w-20">Written by:</h4>
                         <div class="w-80">
-                            @foreach ($comic['writers'] as $writer)
+                            {{-- @foreach ($comic['writers'] as $writer)
                                 <span>
                                     {{ $writer }},
                                 </span>
-                            @endforeach
+                            @endforeach --}}
                         </div>
                     </div>
                 </div>

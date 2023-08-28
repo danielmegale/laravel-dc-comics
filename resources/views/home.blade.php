@@ -1,6 +1,3 @@
-<?php
-$comics = config('comics');
-?>
 @extends('layout.main_layout')
 @section('main')
     {{-- Main --}}
@@ -11,7 +8,7 @@ $comics = config('comics');
                 @foreach ($comics as $comic)
                     <div>
                         <div class="card-container">
-                            <a href="{{ url("/comic/$loop->index") }}"><img src="{{ $comic['thumb'] }}"></a>
+                            <a href="{{ route('comic.show', $comic) }}"><img src="{{ $comic['thumb'] }}"></a>
                         </div>
                         <figcaption>{{ $comic['series'] }}</figcaption>
                     </div>

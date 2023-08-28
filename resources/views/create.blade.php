@@ -8,7 +8,7 @@
 @section('content')
     <div class="card-title d-flex align-items-center justify-content-between container">
         <h1>Aggiungi Comic</h1>
-        <a href="/" class="btn btn-secondary">Indietro</a>
+        <a href="{{ route('home') }}" class="btn btn-secondary">Indietro</a>
     </div>
     <hr>
     <div class="card-body mb-5">

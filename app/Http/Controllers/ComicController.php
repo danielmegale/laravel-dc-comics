@@ -12,9 +12,9 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comic = Comic::all();
+        $comics = Comic::all();
 
-        return view('comic.index', compact('comic'));
+        return view('home', compact('comics'));
     }
 
     /**
@@ -31,20 +31,20 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $comic = new Comic();
-        $comic->title = $data['title'];
-        $comic->description = $data['description'];
-        $comic->thumb = $data['thumb'];
-        $comic->type = $data['type'];
-        $comic->updated_at = $data['updated_at'];
-        $comic->created_at = $data['created_at'];
-        $comic->price = $data['price'];
-        $comic->series = $data['series'];
-        $comic->sale_date = $data['sale_date'];
-        $comic->artists = $data['artists'];
-        $comic->writers = $data['writers'];
+        $comic = new Comic($data);
+        // $comic->title = $data['title'];
+        // $comic->description = $data['description'];
+        // $comic->thumb = $data['thumb'];
+        // $comic->type = $data['type'];
+        // $comic->updated_at = $data['updated_at'];
+        // $comic->created_at = $data['created_at'];
+        // $comic->price = $data['price'];
+        // $comic->series = $data['series'];
+        // $comic->sale_date = $data['sale_date'];
+        // $comic->artists = $data['artists'];
+        // $comic->writers = $data['writers'];
         $comic->save();
-        return view('home');
+        return to_route('home');
     }
 
     /**
@@ -56,11 +56,8 @@ class ComicController extends Controller
     //     $comic = Comic::findOrFail($hero->id);
     //     return view('comic', compact('hero'));
     // }
-    public function show($index)
+    public function show(Comic $comic)
     {
-        $comics = config('comics');
-        $comic = $comics[$index];
-
         return view('comic', compact('comic'));
     }
 

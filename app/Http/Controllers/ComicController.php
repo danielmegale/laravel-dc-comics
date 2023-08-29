@@ -95,6 +95,6 @@ class ComicController extends Controller
     public function destroy(string $id)
     {
         Comic::destroy($id);
-        return to_route('home');
+        return to_route('home')->with('delete', 'success');
     }
 }

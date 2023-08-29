@@ -3,6 +3,11 @@
     {{-- Main --}}
     <section id="main">
         <main>
+            @if (session('delete'))
+                <div class="white">
+                    Eliminazione effettuata con successo
+                </div>
+            @endif
             <h1 class="container">Contents goes here </h1>
             <figure class="container">
                 @foreach ($comics as $comic)

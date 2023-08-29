@@ -80,7 +80,11 @@ class ComicController extends Controller
 
         ]);
         $data = $request->all();
-        $comic = new Comic($data);
+        $comic->title = $data['title'];
+        $comic->description = $data['description'];
+        $comic->thumb = $data['thumb'];
+        $comic->type = $data['type'];
+        $comic->series = $data['series'];
         $comic->save();
         return to_route('comic.show', $comic);
     }
@@ -90,6 +94,7 @@ class ComicController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Comic::destroy($id);
+        return to_route('home');
     }
 }
